@@ -1,34 +1,42 @@
-import React from 'react'
+import { getFirestore } from 'redux-firestore'
+import {getFirebase} from 'react-redux-firebase'
+
 import { connect } from 'react-redux'
-import { firestoreConnect } from 'react-redux-firebase'
-import { compose } from 'redux'
 
- const addWatchList = (watchList) => {
-    return (dispatch, getState, { getFirebase, getFirestore }) => {
-        // const firebase = getFirebase();
-        const firestore = getFirestore();
-        const profile = getState().firebase.profile;
-        const authorId = getState().firebase.uid;
-        firestore.collection('watch-list').add({       
-           ...watchList,
-            movieId: 1,
-            movieName: 'Her',
-            description: 'Its about a guy...'
 
-        }).then(() => {
-            dispatch({ type: 'WATCH-LIST_SUCCESS', watchList })
-        }).catch((err) => {
-            dispatch({ type: 'WATCH-LIST_ERROR', err })
-        })
-    }
-};
+export const addMovieToWatchList = (movie) => {
+    console.log(movie)
 
-const mapStateToProps = (state) => {
-    return {
-        
-    }
+    const firebaseUser = getFirebase().auth().currentUser;
+    const firestore = getFirestore();
+    firestore.collection('watch-list').doc(firebaseUser.uid).collection('movies').doc(movie.title).set({
+       ...movie
+    }).then(function () {
+        console.log("Added");
+    }).catch(function (error) {
+        console.log("not error" + error);
+    });
+
 }
 
-export default compose(
-    connect(mapStateToProps)
-)(addWatchList);
+
+
+//  export const addMovieToWatchList = (movie) => {
+//     return (dispatch, getState, { getFirebase, getFirestore }) => {
+//         // const firebase = getFirebase();
+//         const firestore = getFirestore();
+//         const profile = getState().firebase.profile;
+//         const authorId = getState().firebase.uid;
+//         firestore.collection('watch-list').doc('movie').add({       
+//            ...movie,
+//             movieId: 1,
+//             movieName: 'Her',
+//             description: 'Its about a guy...'
+
+//         }).then(() => {
+//             dispatch({ type: 'WATCH-LIST_SUCCESS', movie })
+//         }).catch((err) => {
+//             dispatch({ type: 'WATCH-LIST_ERROR', err })
+//         })
+//     }
+// };
