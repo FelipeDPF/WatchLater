@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div style={{backgroundColor: '#14181c'}}>
           <Navbar />
           <Switch>
             <Route path="/" component={LandingPage} exact />

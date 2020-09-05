@@ -6,12 +6,15 @@ import { Redirect } from 'react-router-dom'
 class WatchList extends Component {
     render() {
         const {auth} = this.props;
+
         if (!auth.uid) {
             return <Redirect to='/Login' />
         }
+
         return (
-            <div className="container">
+            <div>
                 <h1>Watch List</h1>
+                
 
             </div>
         )

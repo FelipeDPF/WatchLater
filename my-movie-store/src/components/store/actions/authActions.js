@@ -1,30 +1,30 @@
 
 export const signIn = credentials => {
-    return (dispatch, getState, {getFirebase}) => {
+    return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
         firebase.auth().signInWithEmailAndPassword(
-            credentials.email, 
+            credentials.email,
             credentials.password
-        ).then(()=> {
-            dispatch({type: 'LOGIN_SUCCESS'})
+        ).then(() => {
+            dispatch({ type: 'LOGIN_SUCCESS' })
         }).catch((err) => {
-            dispatch({type: 'LOGIN_ERROR', err})
+            dispatch({ type: 'LOGIN_ERROR', err })
         });
-    } 
+    }
 }
 
 export const signOut = () => {
-    return (dispatch, getState, {getFirebase}) => {
+    return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
-        
+
         firebase.auth().signOut().then(() => {
-            dispatch({type: 'SIGNOUT_SUCCESS'});
+            dispatch({ type: 'SIGNOUT_SUCCESS' });
         });
     }
 }
 
 export const register = (newUser) => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firebase = getFirebase();
         const firestore = getFirestore();
 
@@ -33,14 +33,14 @@ export const register = (newUser) => {
             newUser.password
         ).then((resp) => {
             return firestore.collection('users').doc(resp.user.uid).set({
-                firstname: newUser.firstName,
+                firstName: newUser.firstName,
                 lastName: newUser.lastName,
                 initials: newUser.firstName[0] + newUser.lastName[0]
             })
         }).then(() => {
-            dispatch({ type: 'REGISTER_SUCCESS'})
+            dispatch({ type: 'REGISTER_SUCCESS' })
         }).catch((err) => {
-            dispatch({type: 'REGISTER_ERROR', err})
+            dispatch({ type: 'REGISTER_ERROR', err })
         });
     }
 }
