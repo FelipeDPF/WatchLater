@@ -41,7 +41,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Alt Text](http://g.recordit.co/0iYq8BDhfM.gif)
+
+<img src="http://g.recordit.co/0iYq8BDhfM.gif" width="200" height="200" />
 
 I just love movies, so I decided to create a web application that allows me search for the movies that I would like to watch next and them to my watchlist. 
 
