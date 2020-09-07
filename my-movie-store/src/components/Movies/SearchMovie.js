@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import MovieCard from './MovieCard'
 import { Form, Button, InputGroup } from 'react-bootstrap'
-
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 export default function SearchMovie(props) {
-
+    
     // states = input query, movies
     const [query, setQuery] = useState('');
 
@@ -25,12 +26,22 @@ export default function SearchMovie(props) {
         } catch (error) {
             console.error(error);
         }
-
     }
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+          },
+        },
+      }));
+
+    const classes = useStyles();
 
     return (
         <div>
-            <Form className="form" onSubmit={searchMovie}>
+            {/* <Form className="form" onSubmit={searchMovie}>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                     </InputGroup.Prepend>
@@ -42,29 +53,19 @@ export default function SearchMovie(props) {
                     value={query} onChange={(e) => setQuery(e.target.value)}
                 />
                 <Button style={{ marginTop: '2rem' }} variant="dark" size="lg" type="submit">Search</Button>
-            </Form>
+            </Form> */}
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={searchMovie} value={query} onChange={(e) => setQuery(e.target.value)}>
+                {/* <TextField id="standard-basic" label="Standard" />
+                <TextField id="filled-basic" label="Filled" variant="filled" /> */}
+                <TextField style={{width:'100%'}} id="outlined-basic" label="Search Movie" variant="outlined" />
+            </form>
 
             <div style={{ display: 'flex', width: '100%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.filter(movie => movie.poster_path).map(movie => (
-                    <MovieCard movie={movie} key={movie.id}/>
+                    <MovieCard movie={movie} key={movie.id} />
                 ))}
             </div>
 
         </div >
     );
 }
-//export default SearchMovie;
-
-// export const watchList = (newMovie) => {
-//     firestore.collection('watch-list').doc("watch-list").set({
-//                 movieId: newMovie.movieId,
-//                 movieName: newMovie.MovieName,
-//                 movieDescription: newMovie.MovieDescription
-//             })
-//             .then(function() {
-//                 console.log("WATCH-LIST SUCCESS");
-//             })
-//             .catch(function(error) {
-//                 console.error("WATCH-LIST FAIL", error);
-//             });
-//     }
