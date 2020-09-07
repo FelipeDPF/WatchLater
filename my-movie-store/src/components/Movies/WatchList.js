@@ -1,25 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { getFirestore } from 'redux-firestore'
 import { getFirebase } from 'react-redux-firebase'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
+import { deleteMovieFromWatchList } from '../store/actions/movieActions'
 
 export default function DisplayUserWatchList(props) {
 
     //create the state for movies, and update that state appropriate
     const [movies, setMovies] = useState([]);
 
-    React.useEffect(() => {
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    useEffect(() => {
         const DisplayUserWatchList = async (e) => {
             // e.preventDefault();
             console.log("submitting");
-
+            await sleep(1000);
             const firebaseUser = getFirebase().auth().currentUser;
             const firestore = getFirestore();
             const movieDocumentRef = await firestore.collection('watch-list').doc(firebaseUser.uid).collection('movies').get()
             setMovies(movieDocumentRef.docs.map(doc => doc.data()))
         }
+
         DisplayUserWatchList()
-        // console.log(movies.data());
+
     }, [])
 
     return (
@@ -32,10 +37,11 @@ export default function DisplayUserWatchList(props) {
                             <Card.Title><h3 className="card--title">{movie.title}</h3></Card.Title>
                             <Card.Text text='white' style={{ fontSize: 18 }}>
                                 RELEASE DATE: {movie.release_date}{"\n"}
-                              IMDB RATING: {movie.vote_average}
+                                IMDB RATING: {movie.vote_average}
                             </Card.Text>
                             <Card.Text text='white' style={{ fontSize: 15 }}>{movie.overview}</Card.Text>
                         </Card.Body>
+                        <Button onClick={() => deleteMovieFromWatchList(movie)} variant="danger">Remove</Button>
                     </Card>
                 ))}
             </div>
@@ -43,30 +49,3 @@ export default function DisplayUserWatchList(props) {
         </div >
     );
 }
-
-
-// class WatchList extends Component {
-//     render() {
-//         const {auth} = this.props;
-
-//         if (!auth.uid) {
-//             return <Redirect to='/Login' />
-//         }
-
-//         return (
-//             <div>
-//                 <h1>Watch List</h1>
-
-
-//             </div>
-//         )
-//     }
-// }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         auth: state.firebase.auth
-//     }
-// }
-
-// export default connect(mapStateToProps)(WatchList);
