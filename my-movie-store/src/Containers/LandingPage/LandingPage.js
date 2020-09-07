@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchMovie from '../../components/Movies/SearchMovie'
-
+import MoviesTrending from '../../components/Movies/MoviesTrending'
+import { Container } from '@material-ui/core'
 
 class LandingPage extends Component {
     constructor(props) {
@@ -19,9 +20,10 @@ class LandingPage extends Component {
     }
     render() {
         return (
-            <div>
-                 <SearchMovie/>
-            </div>
+            <Container style={{contentAlign:'center'}}>
+                 <SearchMovie />
+                 <MoviesTrending />
+            </Container>
         );
     }
 }
