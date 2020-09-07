@@ -41,9 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Alt Text](http://g.recordit.co/0iYq8BDhfM.gif)
-
-<img src="http://g.recordit.co/0iYq8BDhfM.gif" width="200" height="200" />
+![Open Demo](https://github.com/FelipeDPF/WatchLater/blob/master/demo.gif)
 
 I just love movies, so I decided to create a web application that allows me search for the movies that I would like to watch next and them to my watchlist. 
 
