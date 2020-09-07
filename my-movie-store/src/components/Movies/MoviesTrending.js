@@ -28,9 +28,9 @@ export default function MoviesTrending(props) {
 
     return (
         <div>
+            <h1 style={{fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "yellow", textAlign: 'left', paddingTop: '1em'}}>Trending Movies</h1>
             <div style={{ display: 'flex', width: '120%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.filter(movie => movie.poster_path).map(movie => (
-
                     <Card className="card" key={movie.id} style={{ maxWidth: "600em", flexGrow: 0 }}>
                         <Card.Img variant="bottom" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={movie.title + ' poster'} />
                         {/* <Card.Body >

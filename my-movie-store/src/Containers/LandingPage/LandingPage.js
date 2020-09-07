@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SearchMovie from '../../components/Movies/SearchMovie'
 import MoviesTrending from '../../components/Movies/MoviesTrending'
 import { Container } from '@material-ui/core'
-import Login from '../../components/Auth/Login'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -30,7 +29,6 @@ class LandingPage extends Component {
            
              <Container style={{contentAlign:'center'}}>
                 <SearchMovie />
-                {/* <Login /> */}
                 <MoviesTrending />
              </Container>
             

@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../Logo/logo.jpg'
 import { Link } from 'react-router-dom'
 import SignedInLinks from '../SignedInLinks'
 import SignedOutLinks from '../SignedOutLinks'
@@ -26,9 +25,9 @@ const Menu = (props) => {
                         <p style={{ color: "white"}}>WatchLater</p>
                     </Link>
                 </Nav.Item>
-                <Nav.Item className="ml-auto">
+                {/* <Nav.Item className="ml-auto">
                     <Link to="/most-popular" className="nav-link text-white text-uppercase ml-5">Most Popular</Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 <Nav.Item>
                     {links}
                 </Nav.Item>

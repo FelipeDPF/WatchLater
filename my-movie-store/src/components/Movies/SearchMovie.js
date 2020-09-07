@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import MovieCard from './MovieCard'
-import { Form, Button, InputGroup } from 'react-bootstrap'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { BsSearch} from 'react-icons/bs'
-import { IconContext } from "react-icons";
+// import { BsSearch} from 'react-icons/bs'
+// import { IconContext } from "react-icons";
 
 
 export default function SearchMovie(props) {
@@ -44,7 +43,7 @@ export default function SearchMovie(props) {
             color: "white"
           },
           "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-            borderColor: "red"
+            borderColor: "yellow"
           },
         },
       }));
@@ -53,30 +52,14 @@ export default function SearchMovie(props) {
 
     return (
         <div>
-            {/* <Form className="form" onSubmit={searchMovie}>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                    </InputGroup.Prepend>
-                </InputGroup>
-                <input className="input"
-                    type="text"
-                    name="query"
-                    placeholder="i.e Jurassic park"
-                    value={query} onChange={(e) => setQuery(e.target.value)}
-                />
-                <Button style={{ marginTop: '2rem' }} variant="dark" size="lg" type="submit">Search</Button>
-            </Form> */}
-            <form className={classes.root} noValidate autoComplete="off" onSubmit={searchMovie} value={query} onChange={(e) => setQuery(e.target.value)}>
-                {/* <TextField id="standard-basic" label="Standard" />
-                <TextField id="filled-basic" label="Filled" variant="filled" /> */}
-                
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={searchMovie} value={query} onChange={(e) => setQuery(e.target.value)}> 
             <TextField style={{width:'100%', backgroundColor: 'black'}} InputProps={{style: {color: "white" }}} color="secondary" id="filled-search" label="Search Movie" type="search" variant="outlined" />
             {/* <IconContext.Provider value={{color: "white", size: "2em"}}>
                     <BsSearch style={{width: '5ch'}}/> 
                 </IconContext.Provider>  */}
             </form>
        
-            <div style={{ display: 'flex', width: '100%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
+            <div style={{ display: 'flex', width: '120%', flexDirection: 'row', paddingTop: '2em', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <MovieCard movie={movie} key={movie.id} />
                 ))}
