@@ -7,7 +7,7 @@ class MostPopular extends Component {
     render() {
         const {auth} = this.props;
         if (!auth.uid) {
-            return <Redirect to='/Login' />
+            return <Redirect to='/' />
         }
         return (
             <div className="container">

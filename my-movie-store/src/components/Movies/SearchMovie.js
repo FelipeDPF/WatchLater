@@ -3,6 +3,9 @@ import MovieCard from './MovieCard'
 import { Form, Button, InputGroup } from 'react-bootstrap'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { BsSearch} from 'react-icons/bs'
+import { IconContext } from "react-icons";
+
 
 export default function SearchMovie(props) {
     
@@ -34,6 +37,15 @@ export default function SearchMovie(props) {
             margin: theme.spacing(1),
             width: '25ch',
           },
+          "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+            borderColor: "white"
+          },
+            "& .MuiInputLabel-outlined": {
+            color: "white"
+          },
+          "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+            borderColor: "red"
+          },
         },
       }));
 
@@ -57,9 +69,13 @@ export default function SearchMovie(props) {
             <form className={classes.root} noValidate autoComplete="off" onSubmit={searchMovie} value={query} onChange={(e) => setQuery(e.target.value)}>
                 {/* <TextField id="standard-basic" label="Standard" />
                 <TextField id="filled-basic" label="Filled" variant="filled" /> */}
-                <TextField style={{width:'100%'}} id="outlined-basic" label="Search Movie" variant="outlined" />
+                
+            <TextField style={{width:'100%', backgroundColor: 'black'}} InputProps={{style: {color: "white" }}} color="secondary" id="filled-search" label="Search Movie" type="search" variant="outlined" />
+            {/* <IconContext.Provider value={{color: "white", size: "2em"}}>
+                    <BsSearch style={{width: '5ch'}}/> 
+                </IconContext.Provider>  */}
             </form>
-
+       
             <div style={{ display: 'flex', width: '100%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <MovieCard movie={movie} key={movie.id} />

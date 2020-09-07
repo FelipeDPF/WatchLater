@@ -10,19 +10,18 @@ import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 
 
-
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div style={{backgroundColor: '#14181c'}}>
+        <div className="App">
           <Menu />
           <Switch>
-            <Route path="/" component={LandingPage} exact />
+            <Route path="/" component={Login} exact/>
+            <Route path="/landing-page" component={LandingPage} />
             <Route path="/most-popular" component={MostPopular} />
             <Route path="/watch-list" component={WatchList} />
             <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
           </Switch>
         </div>
       </BrowserRouter>

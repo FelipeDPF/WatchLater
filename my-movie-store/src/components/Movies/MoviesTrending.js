@@ -28,19 +28,19 @@ export default function MoviesTrending(props) {
 
     return (
         <div>
-            <div style={{ display: 'flex', width: '100%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
+            <div style={{ display: 'flex', width: '120%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.filter(movie => movie.poster_path).map(movie => (
 
                     <Card className="card" key={movie.id} style={{ maxWidth: "600em", flexGrow: 0 }}>
                         <Card.Img variant="bottom" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={movie.title + ' poster'} />
-                        <Card.Body >
+                        {/* <Card.Body >
                             <Card.Title><h3 className="card--title">{movie.title}</h3></Card.Title>
                             <Card.Text text='white' style={{ fontSize: 18 }}>
                             RELEASE DATE: {movie.release_date}{"\n"}
                             IMDB RATING: {movie.vote_average}
                             </Card.Text>
-                            {/* <Card.Text text='white' style={{ fontSize: 15 }}>{movie.overview}</Card.Text> */}
-                        </Card.Body>
+                            <Card.Text text='white' style={{ fontSize: 15 }}>{movie.overview}</Card.Text>
+                        </Card.Body> */}
                     </Card>
                 ))}
             </div>

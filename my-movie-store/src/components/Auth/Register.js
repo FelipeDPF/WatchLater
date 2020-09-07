@@ -3,6 +3,7 @@ import { Button, Form} from "react-bootstrap";
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { register } from '../store/actions/authActions'
+import classes from './Register.module.css'
 
 class Register extends Component {
     
@@ -27,10 +28,10 @@ class Register extends Component {
     render() {
         const { auth, authError } = this.props;
         if (auth.uid) {
-            return <Redirect to='/' />
+            return <Redirect to='/landing-page' />
         }
         return (
-            <div className="container">
+            <div className={classes.Register}>
                <h1>Register</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="firstName">

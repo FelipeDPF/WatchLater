@@ -3,11 +3,19 @@ import { getFirestore } from 'redux-firestore'
 import { getFirebase } from 'react-redux-firebase'
 import { Card, Button } from 'react-bootstrap'
 import { deleteMovieFromWatchList } from '../store/actions/movieActions'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
-export default function DisplayUserWatchList(props) {
+ function DisplayUserWatchList(props) {
 
     //create the state for movies, and update that state appropriate
     const [movies, setMovies] = useState([]);
+    
+    // this has to be done tomorrow !!!
+    // const {auth} = props;
+    //         if (!auth.uid) {
+    //             return <Redirect to='/login' />
+    //         }
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -22,12 +30,13 @@ export default function DisplayUserWatchList(props) {
             const movieDocumentRef = await firestore.collection('watch-list').doc(firebaseUser.uid).collection('movies').get()
             setMovies(movieDocumentRef.docs.map(doc => doc.data()))
         }
-
+        
         DisplayUserWatchList()
 
     }, [])
 
     return (
+        
         <div>
             <div style={{ display: 'flex', width: '100%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.map(movie => (
@@ -49,3 +58,12 @@ export default function DisplayUserWatchList(props) {
         </div >
     );
 }
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(DisplayUserWatchList);
+// export default DisplayUserWatchList
