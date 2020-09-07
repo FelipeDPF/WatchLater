@@ -1,42 +1,45 @@
 import React, { Component } from 'react';
-import classes from '../LandingPage/LandingPage.module.css';
-import Typical from 'react-typical'
+import SearchMovie from '../../components/Movies/SearchMovie'
+import MoviesTrending from '../../components/Movies/MoviesTrending'
+import { Container } from '@material-ui/core'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class LandingPage extends Component {
     constructor(props) {
         super(props)
         this.state = { isEmptyState: true }
-      }
+       console.log(' Props here:', this.props);
+    }
     
-      triggerAddLogin = () => {
+    triggerAddLogin = () => {
         this.setState({
-          ...this.state,
-          isEmptyState: false,
-          isAddLoginState: true
+            ...this.state,
+            isEmptyState: false,
+            isAddLoginState: true
         })
-  
-      }
+
+    }
     render() {
+        const {auth} = this.props;
+        if (!auth.uid) {
+            return <Redirect to='/' />
+        }
         return (
-            <div className={classes.LandingPage}>
-                <header className="App-header">
-                    <Typical
-                        steps={[
-                            '', 2000,
-                            'Welcome to MovieOfTheWeek', 500,
-                            'Vote on your favourite movie and see the bests of the week', 500,
-                            'Ready to join the group?', 1000,
-                            'TURN OFF YOUR CELLPHONES AND ENJOY THE MOVIE!😎', 1000,
-                            ''
-                        ]}
-                        loop={1}
-                        wrapper="h1"
-                    />
-                  
-                </header>
-            </div>
+           
+             <Container style={{contentAlign:'center'}}>
+                <SearchMovie />
+                <MoviesTrending />
+             </Container>
+            
         );
     }
 }
 
-export default LandingPage;
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(LandingPage);

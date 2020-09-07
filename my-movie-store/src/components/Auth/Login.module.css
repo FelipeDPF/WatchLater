@@ -1,0 +1,23 @@
+.Login {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 80px;
+    height:100vh;  
+}
+
+.container {
+     margin: 0 auto;
+    /* max-width: 1000px;*/
+    /* padding: 400px; */
+    /* height: 30%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    /* align-self: center; */
+    height:20vh;  
+    width: 100%
+  }
+
+.Form.Control{
+      size: 5000px;
+  }

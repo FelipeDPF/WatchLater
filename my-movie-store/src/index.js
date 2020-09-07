@@ -15,18 +15,27 @@ import firebase from 'firebase/app'
 const store = createStore(rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reduxFirestore(firebConfig),
+    reduxFirestore(firebase, firebConfig)
   )
 );
 
+const rrfConfig = {
+  userProfile: 'users',
+  // movies: 'watch-list',
+  useFirestoreForProfile: true,
+  // enableRedirectHandling: false,
+  // resetBeforeLogin: false
+}
+
 const rrfProps = {
   firebase,
-  config: firebConfig,
+  // config: firebConfig,
+  config: rrfConfig,
   dispatch: store.dispatch,
   createFirestoreInstance
 };
 
-function AuthIsLoaded( { children }) {
+function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
 
   if (!isLoaded(auth)) {
