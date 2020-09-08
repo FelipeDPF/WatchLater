@@ -6,7 +6,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">My project Name</h3>
+  <h3 align="center">WatchLater</h3>
 
   <p align="center">
     Now, you can finally search and add the movies to your personalized watchlist! 
@@ -43,69 +43,93 @@
 
 ![Open Demo](https://github.com/FelipeDPF/WatchLater/blob/master/demo.gif)
 
-I just love movies, so I decided to create a web application that allows me search for the movies that I would like to watch next and them to my watchlist. 
-
-Here's why: 
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+I just love movies, so I decided to create a web application that allows me see what's trending, search for the movies that I would like to watch next, and add them to my watchlist. 
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+* [React](https://reactjs.org)
+* [nodejs](https://nodejs.org/en/)
+* [Firebase](https://firebase.google.com)
+* [Redux](https://redux.js.org/)
 * [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
 
 ### Features
 I am currently working and adding other features, but so far this web application allows you to: 
+* Login and Register
 * Search movies by the title
 * Add multiple movies to your watchlist
-* View your customized movie list and remove movies from your list
+* Delete movies from your watchlist
+* View your customized movie list
+* Sign out 
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Follow these steps to run the application:
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* Install node.js
 ```sh
-npm install npm@latest -g
+https://nodejs.org/en/
+```
+
+* Install React
+```sh
+npm install --save react
+https://reactjs.org/
+```
+
+* Install React-dom
+```sh
+npm install --save react-dom
 ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
 ```sh
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/FelipeDPF/WatchLater.git
 ```
 3. Install NPM packages
 ```sh
-npm install
+
+npm install bootstrap
+
+npm install firebase
+
+npm install react-redux-firebase
+
+npm install redux
+
+npm install redux-firestore
+
+npm install redux-thunk
+
 ```
-4. Enter your API in `config.js`
+
+4. All Movie API addresses found at [https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id](https://themoviedb.com)
+
+5. Enter your firebase API key and the rest of your Firebase configuration info in `firebConfig.js`
 ```JS
-const API_KEY = 'ENTER YOUR API';
+var firebaseConfig = {
+    apiKey: "    ",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+};
 ```
 
 
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE EXAMPLES - screeshots  -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- CONTACT -->
@@ -119,6 +143,8 @@ Project Link: [WatchLater Repo](https://github.com/FelipeDPF/WatchLater)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [GitHub React Bootstrap ](https://react-bootstrap.github.io)
+* [GitHub Material UI ](https://material-ui.com)
+* [GitHub React Icons](https://react-icons.github.io/react-icons)
 
 
