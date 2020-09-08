@@ -11,14 +11,12 @@
   <p align="center">
     Now, you can finally search and add the movies to your personalized watchlist! 
     <br />
-    <a href=""><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://github.com/FelipeDPF/WatchLater/blob/master/demo.gif">View Demo</a>
     ·
-    <a href="">Linkedin</a>
+    <a href="https://www.linkedin.com/in/felipe-filho">Linkedin</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </p>
 
@@ -135,7 +133,7 @@ var firebaseConfig = {
 <!-- CONTACT -->
 ## Contact
 
-Felipe Filho - [@felipe_filho](https://www.linkedin.com/in/felipe-filho/) - ffilho@hotmail.com
+Felipe Filho - [@felipe_filho](https://www.linkedin.com/in/felipe-filho) - ffilho@hotmail.com
 
 Project Link: [WatchLater Repo](https://github.com/FelipeDPF/WatchLater)
 
