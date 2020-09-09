@@ -5,6 +5,7 @@ import { signIn } from '../store/actions/authActions'
 import { Redirect } from 'react-router-dom'
 import classes from './Login.module.css'
 import { Link } from 'react-router-dom'
+import background from '../UI/images/background.png'
 
 class Login extends Component {
     state = {
@@ -29,31 +30,35 @@ class Login extends Component {
             return <Redirect to='/landing-page' />
         }
         return (
-            <div className={classes.Login}>  
-                <h1 style={{fontSize: '100px', fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', paddingTop: ''}}>Login to access your watchlist!</h1>
-            <div className={classes.container}>
-                
-                <Form onSubmit={this.handleSubmit} >
-                    <h1>Login</h1>
-                    <Form.Group controlId="email" >
-                        <Form.Label >Email address</Form.Label>
-                        <Form.Control type="email" size="lg" placeholder="Enter email" onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" size="lg" placeholder="Password" onChange={this.handleChange} />
-                    </Form.Group>
-                    <Button variant="primary" size="lg" type="submit">Login</Button>{'    '}
-                    <Button variant="danger" size="lg" type="submit">
-                        <Link to="/register" style={{ color: 'white' }}>
-                            Register
+            <div style={{backgroundSize: 'cover', backgroundImage: `url(${background})`}}>
+            <div className={classes.Login}>
+                <div className={classes.message}>
+                    <h1 style={{ fontSize: '100px', fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "yellow", textAlign: 'middle'}}>
+                        Login to access your watchlist!
+                </h1>
+                </div>
+                <div className={classes.form}>
+                    <Form onSubmit={this.handleSubmit} >
+                        <h1>Login</h1>
+                        <Form.Group controlId="email" >
+                            <Form.Control type="email" size="lg" style={{padding: '30px', fontSize: '40px'}} placeholder="Enter email" onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="password">
+                            <Form.Control type="password" size="lg" style={{padding: '30px', fontSize: '40px'}} placeholder="Password" onChange={this.handleChange} />
+                        </Form.Group>
+                        <Button variant="primary" size="lg"  style={{width: '300px', height: '100px', fontSize: '40px'}} type="submit">Login</Button>{'    '}
+                        <Button variant="danger" size="lg"   style={{width: '300px', height: '100px' ,fontSize: '40px'}} type="submit">
+                            <Link to="/register" style={{ color: 'white', textDecoration: 'none'}}>
+                                Register
                         </Link>
-                    </Button>
-                    <div style={{ textDecoration: 'none' }}>
-                        {authError ? <p>{authError}</p> : null}
+                        </Button>
+
+                        <div style={{ textDecoration: 'none' }}>
+                            {authError ? <p>{authError}</p> : null}
+                        </div>
+                    </Form>
                     </div>
-                </Form>
-            </div>
+                </div>
             </div>
         )
     }

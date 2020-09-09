@@ -1,23 +1,25 @@
 .Login {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 80px;
-    height:100vh;  
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-top: 80px;
+  height:80vh;  
+  
 }
 
-.container {
-     margin: 0 auto;
-    /* max-width: 1000px;*/
-    /* padding: 400px; */
-    /* height: 30%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    /* align-self: center; */
-    height:20vh;  
-    width: 100%
-  }
+.message{
+  margin-bottom: 1em;
+  margin-top: 3em;
+}
 
-.Form.Control{
-      size: 5000px;
-  }
+.form {
+  margin: 0 auto;
+  /* max-width: 1000px;*/
+  /* padding: 400px; */
+  /* height: 30%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  /* align-self: center; */
+  height:20vh;  
+  width: 100%
+}
