@@ -1,23 +1,36 @@
 .Register {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 80px;
-    height:100vh;  
+  margin: 0 auto;
+  max-width: 1600px;
+  padding-top: 80px;
+  height:80vh;  
+  
 }
 
-.container {
-     margin: 0 auto;
-    /* max-width: 1000px;*/
-    /* padding: 400px; */
-    /* height: 30%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    /* align-self: center; */
-    height:30vh;  
-    width: 100%
-  }
+.message{
+  margin-bottom: 5em;
+}
 
-.Form.Control{
-      size: 5000px;
+.form {
+  margin: 0 auto;
+  /* max-width: 1000px;*/
+  /* padding: 400px; */
+  /* height: 30%; */
+  display: flex;
+  justify-content: middle;
+  align-items: middle;  
+  align-self: center;
+  height:20vh;  
+  width: 100%
+}
+
+/* @media(max-width: 500px){
+  .form{
+    height:200vh; 
   }
+} */
+
+/* .FormControl{
+  size: 5000px;
+  height:40vh;  
+  width: 100%
+} */
