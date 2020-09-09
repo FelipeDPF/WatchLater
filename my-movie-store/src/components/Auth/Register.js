@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Row, Col } from "react-bootstrap";
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { register } from '../store/actions/authActions'
+import { Link } from 'react-router-dom'
 import classes from './Register.module.css'
 
 class Register extends Component {
@@ -32,38 +33,50 @@ class Register extends Component {
         }
         return (
             <div className={classes.Register}>
-                    <h1 style={{ fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', paddingTop: '3em' }}>Don't know what movie to watch?</h1>
-                    <h1 style={{ fontSize: '100px', fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', paddingTop: '' }}>Join and find whats trending right now! </h1>
-                    <div className={classes.container}>
-                    <Form onSubmit={this.handleSubmit}>
-                    <h1>Register</h1>
+                <Row>
+                    <Col>
+                <div className={classes.message}>
+                <h1 style={{ fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', paddingTop: '3em' }}>
+                    Don't know what movie to watch?
+                </h1>
+                <h1 style={{ fontSize: '100px', fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', }}>
+                    Join us and find whats trending right now! 
+                </h1>
+                </div>
+                
+                <div className={classes.form} >
+                   <Form onSubmit={this.handleSubmit} >
+                        <h1>Register</h1>
                         <Form.Group controlId="firstName">
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter first name" onChange={this.handleChange} />
+                            <Form.Control type="text" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Enter first name" onChange={this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId="lastName">
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter last name" onChange={this.handleChange} />
+                            <Form.Control type="text" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Enter last name" onChange={this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId="email">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" onChange={this.handleChange} />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                        </Form.Text>
+                            <Form.Control type="email" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Enter email" onChange={this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" onChange={this.handleChange} />
+                            <Form.Control type="password" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Password" onChange={this.handleChange} />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Register
-                    </Button>
+                        <Button variant="primary" style={{width: '300px', height: '100px', fontSize: '40px'}} size="lg" type="submit">
+                            Register 
+                        </Button>{'    '}
+                        <Button variant="danger" size="lg" style={{width: '300px', height: '100px', fontSize: '40px'}}>
+                            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+                                Login
+                            </Link>
+                        </Button>
                         <div style={{ color: "red" }}>
                             {authError ? <p>{authError}</p> : null}
                         </div>
                     </Form>
                 </div>
+                </Col>
+                <Col>
+                <img src={require('../UI/images/demo2.gif')} alt="loading..." width="900" height="1270"/>
+                </Col>
+                </Row>
             </div>
         )
     }
