@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { connect } from 'react-redux'
 import { signIn } from '../store/actions/authActions'
 import { Redirect } from 'react-router-dom'
-import classes from './Login.module.css'
+import classes from '../auth/Login.module.css'
 import { Link } from 'react-router-dom'
 import background from '../UI/images/background.png'
 

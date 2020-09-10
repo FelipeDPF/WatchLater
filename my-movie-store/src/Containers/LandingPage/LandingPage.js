@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchMovie from '../../components/Movies/SearchMovie'
-import MoviesTrending from '../../components/Movies/MoviesTrending'
+import SearchMovie from '../../components/movies/SearchMovie'
+import MoviesTrending from '../../components/movies/MoviesTrending'
 import { Container } from '@material-ui/core'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'

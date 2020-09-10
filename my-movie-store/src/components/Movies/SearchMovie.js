@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MovieCard from './MovieCard'
+import MovieCard from '../movies/MovieCard'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 // import { BsSearch} from 'react-icons/bs'
