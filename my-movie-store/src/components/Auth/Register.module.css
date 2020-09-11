@@ -7,21 +7,18 @@
 }
 
 .message{
-  margin-bottom: 5em;
+  margin-bottom: 1em;
 }
 
-.form {
+/* .form {
   margin: 0 auto;
-  /* max-width: 1000px;*/
-  /* padding: 400px; */
-  /* height: 30%; */
   display: flex;
   justify-content: middle;
   align-items: middle;  
   align-self: center;
   height:20vh;  
   width: 100%
-}
+} */
 
 /* @media(max-width: 500px){
   .form{

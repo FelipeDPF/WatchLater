@@ -46,14 +46,14 @@ class Login extends Component {
                         <Form.Group controlId="password">
                             <Form.Control type="password" size="lg" style={{padding: '30px', fontSize: '40px'}} placeholder="Password" onChange={this.handleChange} />
                         </Form.Group>
-                        <Button variant="primary" size="lg"  style={{width: '300px', height: '100px', fontSize: '40px'}} type="submit">Login</Button>{'    '}
-                        <Button variant="danger" size="lg"   style={{width: '300px', height: '100px' ,fontSize: '40px'}} type="submit">
+                        <Button variant="primary" size="lg"  style={{width: '200px', height: '50px', fontSize: '20px'}} type="submit">Login</Button>{'    '}
+                        <Button variant="danger" size="lg"   style={{width: '200px', height: '50px', fontSize: '20px'}} type="submit">
                             <Link to="/register" style={{ color: 'white', textDecoration: 'none'}}>
                                 Register
                         </Link>
                         </Button>
 
-                        <div style={{ textDecoration: 'none' }}>
+                        <div style={{ textDecoration: 'none', color: 'red' }}>
                             {authError ? <p>{authError}</p> : null}
                         </div>
                     </Form>

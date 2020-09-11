@@ -36,10 +36,10 @@ class Register extends Component {
                 <Row>
                     <Col>
                 <div className={classes.message}>
-                <h1 style={{ fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', paddingTop: '3em' }}>
+                <h4 style={{ fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', paddingTop: '3em' }}>
                     Don't know what movie to watch?
-                </h1>
-                <h1 style={{ fontSize: '100px', fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle', }}>
+                </h4>
+                <h1 style={{ fontSize: '50px', fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "White", textAlign: 'middle' }}>
                     Join us and find whats trending right now! 
                 </h1>
                 </div>
@@ -48,21 +48,21 @@ class Register extends Component {
                    <Form onSubmit={this.handleSubmit} >
                         <h1>Register</h1>
                         <Form.Group controlId="firstName">
-                            <Form.Control type="text" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Enter first name" onChange={this.handleChange} />
+                            <Form.Control type="text" size="lg" placeholder="Enter first name" onChange={this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId="lastName">
-                            <Form.Control type="text" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Enter last name" onChange={this.handleChange} />
+                            <Form.Control type="text" size="lg" placeholder="Enter last name" onChange={this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId="email">
-                            <Form.Control type="email" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Enter email" onChange={this.handleChange} />
+                            <Form.Control type="email" size="lg" placeholder="Enter email" onChange={this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId="password">
-                            <Form.Control type="password" style={{padding: '30px', fontSize: '40px'}} size="lg" placeholder="Password" onChange={this.handleChange} />
+                            <Form.Control type="password" size="lg" placeholder="Password" onChange={this.handleChange} />
                         </Form.Group>
-                        <Button variant="primary" style={{width: '300px', height: '100px', fontSize: '40px'}} size="lg" type="submit">
+                        <Button variant="primary" style={{width: '200px', height: '50px', fontSize: '20px'}} size="lg" type="submit">
                             Register 
                         </Button>{'    '}
-                        <Button variant="danger" size="lg" style={{width: '300px', height: '100px', fontSize: '40px'}}>
+                        <Button variant="danger" size="lg" style={{width: '200px', height: '50px', fontSize: '20px'}}>
                             <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
                                 Login
                             </Link>
@@ -74,7 +74,7 @@ class Register extends Component {
                 </div>
                 </Col>
                 <Col>
-                <img src={require('../UI/images/demo2.gif')} alt="loading..." width="900" height="1270"/>
+                <img src={require('../UI/images/demo2.gif')} alt="loading..." width="500" height="700"/>
                 </Col>
                 </Row>
             </div>
