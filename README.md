@@ -36,7 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Open Demo](https://github.com/FelipeDPF/WatchLater/blob/master/demo.gif)
+![Open Demo](https://github.com/FelipeDPF/WatchLater/blob/master/demo3.gif)
 
 I just love movies, so I decided to create a web application that allows me see what's trending, search for the movies that I would like to watch next, and add them to my watchlist. 
 
