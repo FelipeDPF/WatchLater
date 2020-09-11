@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { getFirestore } from 'redux-firestore'
-import { getFirebase } from 'react-redux-firebase'
+import { Modal, getFirebase } from 'react-redux-firebase'
 import { Card, Button } from 'react-bootstrap'
 import { deleteMovieFromWatchList } from '../store/actions/movieActions'
 import { connect } from 'react-redux'
-// import { Redirect } from 'react-router-dom'
+ import { Redirect } from 'react-router-dom'
 import { Container } from '@material-ui/core'
-
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 function DisplayUserWatchList(props) {
 
     //create the state for movies, and update that state appropriate
     const [movies, setMovies] = useState([]);
+    const noUserFound = <Redirect to='/' />;
 
     // this has to be done tomorrow !!!
     // const {auth} = props;
@@ -26,7 +28,13 @@ function DisplayUserWatchList(props) {
             // e.preventDefault();
             console.log("submitting");
             await sleep(1000);
+            
             const firebaseUser = getFirebase().auth().currentUser;
+           
+            // if (!getFirebase().auth().currentUser) {
+            // console.log("No user detected", getFirebase().auth().currentUser )
+            //     return <Redirect to='/' />
+            // }
             const firestore = getFirestore();
             const movieDocumentRef = await firestore.collection('watch-list').doc(firebaseUser.uid).collection('movies').get()
             setMovies(movieDocumentRef.docs.map(doc => doc.data()))
@@ -37,13 +45,12 @@ function DisplayUserWatchList(props) {
     }, [])
 
     return (
-
         <Container style={{margin: '0 auto', maxWidth: '1000px', padding: '40px'}}>
             <h1 style={{ fontFamily: 'Open Sans', fontStyle: 'normal', fontWeight: 'bold', color: "yellow", textAlign: 'left', paddingBottom: '1em' }}> My Watchlist</h1>
             <div style={{ display: 'flex', width: '120%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }} >
                 {movies.map(movie => (
                     <Card className="card" key={movie.id} style={{ maxWidth: "600em", flexGrow: 0 }}>
-                        <Card.Img variant="bottom" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={movie.title + ' poster'} />
+                        <Card.Img variant="bottom" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title + ' poster'} />
                         <Button style={{ fontWeight: 900 }} onClick={() => deleteMovieFromWatchList(movie)} variant="danger">Remove</Button>
                     </Card>
                 ))}
