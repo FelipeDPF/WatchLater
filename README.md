@@ -10,7 +10,7 @@
     <br />
     <br />
     <br />
-    <a href="https://github.com/FelipeDPF/WatchLater/blob/master/demo.gif">View Demo</a>
+    <a href="https://github.com/FelipeDPF/WatchLater/blob/master/demo3.gif">View Demo</a>
     ·
     <a href="https://www.linkedin.com/in/felipe-filho">Linkedin</a>
     ·
