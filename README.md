@@ -130,7 +130,7 @@ var firebaseConfig = {
 <!-- CONTACT -->
 ## Contact
 
-Felipe Filho - [@felipe_filho](https://www.linkedin.com/in/felipe-filho) - ffilho@hotmail.com
+Felipe Filho - [@felipe_filho](https://www.linkedin.com/in/felipe-filho) - ffilho2@hotmail.com
 
 Project Link: [WatchLater Repo](https://github.com/FelipeDPF/WatchLater)
 
