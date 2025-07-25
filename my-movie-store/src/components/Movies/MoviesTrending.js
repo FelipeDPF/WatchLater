@@ -13,7 +13,7 @@ export default function MoviesTrending(props) {
     const searchMovie = async (e) => {
         console.log("submitting");
 
-        const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=a43b9405f6e8b21a323ed6a3bb65cc97&language=en-US&page=1&include_adult=false`;
+        const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false`;
 
         try {
             const res = await fetch(url);

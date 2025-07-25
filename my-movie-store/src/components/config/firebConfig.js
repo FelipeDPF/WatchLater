@@ -4,7 +4,7 @@ import 'firebase/auth'
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyCuhsxz_lI4x1jBJB8lWiW3h44RQQeN1F0",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: "moviedb-505ef.firebaseapp.com",
     databaseURL: "https://moviedb-505ef.firebaseio.com",
     projectId: "moviedb-505ef",

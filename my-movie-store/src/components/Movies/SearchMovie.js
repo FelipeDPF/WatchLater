@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MovieCard from '../movies/MovieCard'
+import MovieCard from '../Movies/MovieCard'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 // import { BsSearch} from 'react-icons/bs'
@@ -18,7 +18,7 @@ export default function SearchMovie(props) {
         e.preventDefault();
         console.log("submitting");
 
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=a43b9405f6e8b21a323ed6a3bb65cc97&language=en-US&query=${query}&page=1&include_adult=false`;
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
         try {
             const res = await fetch(url);
