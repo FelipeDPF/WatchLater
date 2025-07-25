@@ -8,13 +8,9 @@
   <p align="center">
     Now you can search for and add movies to your personalized watchlist!
     <br />
-    <br />
-    <br />
-    <a href="https://github.com/FelipeDPF/WatchLater/blob/master/demo3.gif">View Demo</a>
-    ·
-    <a href="https://www.linkedin.com/in/felipe-filho">Linkedin</a>
-    ·
   </p>
+
+  ![Demo](demo3.gif)
 </p>
 
 
@@ -27,7 +23,6 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -145,8 +140,6 @@ NODE_OPTIONS=--openssl-legacy-provider npm start
 ### Contact
 
 Felipe Filho - [@felipe_filho](https://www.linkedin.com/in/felipe-filho) - ffilho2@hotmail.com
-
-Project Link: [WatchLater Repo](https://github.com/FelipeDPF/WatchLater)
 
 
 
