@@ -6,7 +6,7 @@
   <h3 align="center">WatchLater</h3>
 
   <p align="center">
-    Now, you can finally search and add the movies to your personalized watchlist! 
+    Now you can search for and add movies to your personalized watchlist!
     <br />
     <br />
     <br />
@@ -53,7 +53,7 @@ I am currently working and adding other features, but so far this web applicatio
 * Search movies by the title
 * Add multiple movies to your watchlist
 * Delete movies from your watchlist
-* View your customized movie list
+* View and manage your personalized watchlist
 * Sign out 
 
 
@@ -103,6 +103,17 @@ npm install redux-thunk
 
 ```
 
+## 🚀 Running the App
+
+After installing all dependencies and adding your Firebase and Movie API credentials, run the development server with:
+
+```bash
+NODE_OPTIONS=--openssl-legacy-provider npm start
+```
+
+Then open http://localhost:3000 in your browser.
+
+
 4. All Movie API addresses found at [https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id](https://themoviedb.com)
 
 5. Enter your firebase API key and the rest of your Firebase configuration info in `firebConfig.js`
@@ -120,15 +131,18 @@ var firebaseConfig = {
 ```
 
 
+## ⚠️ Node Compatibility Note
+If you're using Node.js v17 or above, you may encounter an OpenSSL-related error during startup.  
+This is due to deprecated OpenSSL algorithms in newer versions.  
+To resolve it, start the development server with:
 
-<!-- USAGE EXAMPLES - screeshots  -->
-## Usage
-
-
+```JS
+NODE_OPTIONS=--openssl-legacy-provider npm start
+```
 
 
 <!-- CONTACT -->
-## Contact
+### Contact
 
 Felipe Filho - [@felipe_filho](https://www.linkedin.com/in/felipe-filho) - ffilho2@hotmail.com
 
@@ -137,7 +151,7 @@ Project Link: [WatchLater Repo](https://github.com/FelipeDPF/WatchLater)
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+### Acknowledgements
 * [GitHub React Bootstrap ](https://react-bootstrap.github.io)
 * [GitHub Material UI ](https://material-ui.com)
 * [GitHub React Icons](https://react-icons.github.io/react-icons)

@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { register } from '../store/actions/authActions'
 import { Link } from 'react-router-dom'
-import classes from '../auth/Register.module.css'
+import classes from '../Auth/Register.module.css'
 
 class Register extends Component {
 
