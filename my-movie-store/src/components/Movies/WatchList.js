@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { getFirestore } from 'redux-firestore'
-import { Modal, getFirebase } from 'react-redux-firebase'
+import { getFirebase } from 'react-redux-firebase'
 import { Card, Button } from 'react-bootstrap'
 import { deleteMovieFromWatchList } from '../store/actions/movieActions'
 import { connect } from 'react-redux'
- import { Redirect } from 'react-router-dom'
+//  import { Redirect } from 'react-router-dom'
 import { Container } from '@material-ui/core'
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 function DisplayUserWatchList(props) {
 
     //create the state for movies, and update that state appropriate
     const [movies, setMovies] = useState([]);
-    const noUserFound = <Redirect to='/' />;
+    // const noUserFound = <Redirect to='/' />;
 
     // this has to be done tomorrow !!!
     // const {auth} = props;

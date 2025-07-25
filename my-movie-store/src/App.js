@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Menu from './components/UI/menu/Menu'
-import LandingPage from './containers/landingPage/LandingPage'
-import WatchList from './components/movies/WatchList'
-import MostPopular from './components/movies/MostPopular'
-import Register from './components/auth/Register';
-import Login from './components/auth/Login';
+import Menu from './components/UI/Menu/Menu'
+import LandingPage from './Containers/LandingPage/LandingPage'
+import WatchList from './components/Movies/WatchList'
+import MostPopular from './components/Movies/MostPopular'
+import Register from './components/Auth/Register'
+import Login from './components/Auth/Login'
 
 
 class App extends Component {

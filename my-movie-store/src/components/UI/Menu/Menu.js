@@ -4,7 +4,7 @@ import SignedInLinks from '../SignedInLinks'
 import SignedOutLinks from '../SignedOutLinks'
 import { connect } from 'react-redux'
 import { Navbar, Nav } from 'react-bootstrap'
-import classes from '../menu/Menu.module.css'
+import classes from '../Menu/Menu.module.css'
 import { MdLocalMovies} from 'react-icons/md'
 import { IconContext } from "react-icons";
 
